@@ -1,0 +1,18 @@
+{
+  "program_name": "CLAIMS-AUDIT",
+  "paragraphs": [
+    "MAIN-PROCESS",
+    "READ-CLAIM",
+    "CHECK-CLAIM",
+    "WRITE-AUDIT"
+  ],
+  "files": [
+    "CLAIM-FILE",
+    "AUDIT-FILE"
+  ],
+  "variables": [
+    "WS-EOF",
+    "WS-AUDIT-COUNT",
+    "WS-TOTAL-AMOUNT"
+  ]
+}

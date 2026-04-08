@@ -1,0 +1,14 @@
+{
+  "program_name": "INVENTORY-UPDATE",
+  "paragraphs": [
+    "MAIN-LOGIC",
+    "CALCULATE-STOCK",
+    "WRITE-RESULT"
+  ],
+  "files": [],
+  "variables": [
+    "WS-ITEM-ID",
+    "WS-QUANTITY",
+    "WS-NEW-QUANTITY"
+  ]
+}

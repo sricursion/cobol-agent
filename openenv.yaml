@@ -1,0 +1,69 @@
+spec_version: 1
+name: cobol_modernization_env
+version: "1.0.0"
+description: >
+  Real-world COBOL modernization environment. An agent must extract Mermaid
+  program structure from legacy COBOL code, compare COBOL and Python dependency
+  graphs, and repair intentionally broken modernization artifacts.
+type: space
+runtime: fastapi
+app: server.app:app
+port: 7860
+
+tasks:
+  - id: extract_easy
+    difficulty: easy
+    description: >
+      Extract a Mermaid program map from a COBOL inventory-update program.
+      Score is based on structural token coverage and edge density (0.0–1.0).
+    success_threshold: 0.88
+
+  - id: compare_medium
+    difficulty: medium
+    description: >
+      Compare COBOL and Python dependency graphs for a payroll-report workflow.
+      Score is based on dependency coverage, graph quality, and Python syntax
+      validity (0.0–1.0).
+    success_threshold: 0.82
+
+  - id: fix_hard
+    difficulty: hard
+    description: >
+      Repair intentionally broken Mermaid and Python modernization artifacts for
+      a claims-audit COBOL program. Score is based on post-fix extraction
+      quality, dependency mapping, and Python syntax (0.0–1.0).
+    success_threshold: 0.86
+
+reward:
+  description: >
+    Weighted combination: 25% field-completion, 55% grader quality score,
+    20% improvement bonus over prior best. Penalties: −0.15 for repeated
+    identical submissions, up to −0.30 for risk flags raised by graders.
+  range: [0.0, 1.0]
+
+observation_space:
+  task_id: string
+  title: string
+  difficulty: "easy | medium | hard"
+  task_type: "extract | compare | fix"
+  objective: string
+  cobol_source: string
+  attempt: integer
+  max_attempts: integer
+  best_score: float
+  feedback: list[string]
+  required_fields: list[string]
+  starter_artifacts: object
+  reward_breakdown: object
+  reward: float
+  done: boolean
+
+action_space:
+  task_id: string
+  program_mermaid: string
+  python_source: string
+  cobol_dependency_mermaid: string
+  python_dependency_mermaid: string
+  fixed_mermaid: string
+  fixed_python_source: string
+  notes: list[string]

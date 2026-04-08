@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cobol-conversion-agent"
+version = "0.1.0"
+description = "Gradio-based COBOL analysis and auto-fix agent powered by OpenAI and OpenEnv."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "gradio>=5.0.0",
+    "openai>=1.0.0",
+    "openenv-core>=0.2.3",
+    "pydantic>=2.8.0",
+    "python-dotenv>=1.0.0",
+    "uvicorn>=0.24.0",
+]
+
+[project.scripts]
+server = "server.app:main"
+baseline = "baseline_inference:main"
+inference = "inference:main"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+py-modules = ["models", "client", "baseline_inference", "inference"]
+
+[tool.setuptools.packages.find]
+where = ["."]

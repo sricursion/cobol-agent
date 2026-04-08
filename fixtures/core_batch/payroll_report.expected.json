@@ -1,0 +1,15 @@
+{
+  "program_name": "PAYROLL-REPORT",
+  "paragraphs": [
+    "MAIN-PARA",
+    "READ-EMPLOYEE",
+    "PRINT-EMPLOYEE"
+  ],
+  "files": [
+    "EMPLOYEE-FILE"
+  ],
+  "variables": [
+    "WS-TOTAL-PAY",
+    "WS-EOF"
+  ]
+}
