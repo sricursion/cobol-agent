@@ -23,7 +23,7 @@ The agent is placed in a COBOL modernization environment and must complete three
 
 1. `easy`: extract a Mermaid program map from a COBOL program
 2. `medium`: compare COBOL and Python dependency graphs
-3. `hard`: repair intentionally broken Mermaid and Python modernization drafts
+3. `hard`: repair broken Mermaid and Python modernization drafts
 
 Each task has a deterministic grader and returns reward in the `0.0` to `1.0` range.
 
